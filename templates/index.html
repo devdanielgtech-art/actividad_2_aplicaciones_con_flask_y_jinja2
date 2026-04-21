@@ -1,69 +1,82 @@
 {% extends "base.html" %}
 
-{% block title %}Inicio - Mi Portafolio{% endblock %}
+{% block title %}Inicio{% endblock %}
 
 {% block content %}
-<!-- Sección Hero -->
-<section class="hero-section text-center">
-    <div class="container">
-        <img src="https://via.placeholder.com/150" alt="Mi foto" class="rounded-circle mb-4" style="width: 150px; height: 150px; object-fit: cover;">
-        <h1 class="display-4">¡Hola! Soy DANIEL</h1>
-        <p class="lead">Desarrollador Web apasionado por crear experiencias digitales increíbles</p>
-        <a href="#proyectos" class="btn btn-light btn-lg">Ver mis proyectos</a>
-    </div>
-</section>
 
-<!-- Sección de Proyectos -->
-<section id="proyectos" class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-5">Mis Proyectos</h2>
-        <div class="row">
-            {% for proyecto in proyectos %}
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ proyecto.nombre }}</h5>
-                        <p class="card-text">{{ proyecto.descripcion }}</p>
-                        <p class="card-text"><small class="text-muted">{{ proyecto.tecnologias }}</small></p>
-                        <a href="#" class="btn btn-primary">Ver más</a>
-                    </div>
-                </div>
+<!-- parte de arriba presentación -->
+<div class="text-center mb-5">
+    <h1 class="display-4">Hola, soy <span class="text-primary">Daniel</span></h1>
+    <p class="lead"> Estudiante de la materia Tecnologias Emergentes II </p>   
+    <img src="/static/imagenes/mi_foto.jpg" class="rounded-circle mt-3" alt="Foto perfil" style="width: 150px; height: 150px; object-fit: cover;">
+<!-- habilidades -->
+<h2 class="text-center mb-4">Mis Habilidades</h2>
+<div class="row text-center mb-5">
+    <div class="col-md-4">
+        <i class="bi bi-code-slash fs-1 text-primary"></i>
+        <h4>Python / Flask</h4>
+        <p>Desarrollo backend con Flask y Jinja2</p>
+    </div>
+    <div class="col-md-4">
+        <i class="bi bi-window fs-1 text-primary"></i>
+        <h4>Frontend</h4>
+        <p>HTML5, CSS3, Bootstrap, JavaScript</p>
+    </div>
+    <div class="col-md-4">
+        <i class="bi bi-database fs-1 text-primary"></i>
+        <h4>Bases de Datos</h4>
+        <p>SQLite, MySQL, PostgreSQL</p>
+    </div>
+    <div class="col-md-4">
+        <i class="bi bi-database fs-1 text-primary"></i>
+        <h4>Conexión a Bases de Datos con Python</h4>
+        <p>Conexión a bases de datos utilizando Python con la libreria SQLite View</p>
+    </div>
+    <div class="col-md-4">
+        <i class="bi bi-globe fs-1 text-primary"></i>
+        <h4>Paginas Web estáticas</h4>
+        <p>Render y github pages como alojamiento</p>
+    </div>
+    <div class="col-md-4">
+        <i class="bi bi-cookie fs-1 text-primary"></i>
+        <h4>Paginas con Cookies</h4>
+        <p>Usando flask, jinja2 y python</p>
+    </div>
+   
+</div>
+
+<!-- proyectos -->
+<h2 class="text-center mb-4">Mis Proyectos</h2>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Corpeta de contactos </h5>
+                <p class="card-text">Aplicación para gestionar Comtactos con Flask basandome en los cookies como guardado</p>
             </div>
-            {% endfor %}
         </div>
     </div>
-</section>
-
-<!-- Sección de Habilidades -->
-<section id="habilidades" class="py-5 bg-light">
-    <div class="container">
-        <h2 class="text-center mb-5">Mis Habilidades</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                {% for habilidad in habilidades %}
-                <div class="mb-3">
-                    <div class="d-flex justify-content-between mb-1">
-                        <span>{{ habilidad.nombre }}</span>
-                        <span>{{ habilidad.nivel }}</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: {{ habilidad.nivel }};">
-                            &nbsp;
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Carrito de compras  </h5>
+                <p class="card-text">Aplicación web para gestionar un carrito de compras con Flask</p>
             </div>
         </div>
     </div>
-</section>
-
-<!-- Llamada a la acción -->
-<section class="py-5 text-center">
-    <div class="container">
-        <h3>¿Interesado en trabajar conmigo?</h3>
-        <p>¡Contáctame y hablemos sobre tu próximo proyecto!</p>
-        <a href="{{ url_for('contacto') }}" class="btn btn-primary btn-lg">Contáctame</a>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Desarrolo de aplicaiones web con bootstrap</h5>
+                <p class="card-text">Aplicación web desarrollada con Bootstrap para un diseño responsivo</p>
+            </div>
+        </div>
     </div>
-</section>
+</div>
+
+<!-- Botón de contacto -->
+<div class="text-center mt-5">
+    <a href="/contacto" class="btn btn-primary btn-lg">Contáctame</a>
+</div>
+
 {% endblock %}

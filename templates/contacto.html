@@ -1,61 +1,35 @@
 {% extends "base.html" %}
 
-{% block title %}Contacto - Mi Portafolio{% endblock %}
+{% block title %}Contacto{% endblock %}
 
 {% block content %}
-<section class="py-5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card shadow">
-                    <div class="card-header bg-primary text-white">
-                        <h3 class="mb-0">Formulario de Contacto</h3>
+<!-- formulario de contacto ggg -->
+<h2 class="text-center mb-4">Formulario para Contactctarse con Daniel</h2>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre completo</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
                     </div>
-                    <div class="card-body">
-                        <form method="POST" action="{{ url_for('contacto') }}">
-                            <div class="mb-3">
-                                <label for="nombre" class="form-label">Nombre completo *</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Correo electrónico *</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="telefono" class="form-label">Teléfono (opcional)</label>
-                                <input type="tel" class="form-control" id="telefono" name="telefono">
-                            </div>
-                            <div class="mb-3">
-                                <label for="mensaje" class="form-label">Mensaje *</label>
-                                <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary btn-lg">Enviar mensaje</button>
-                            </div>
-                        </form>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
                     </div>
-                </div>
-                
-                <!-- Información de contacto adicional -->
-                <div class="row mt-5 text-center">
-                    <div class="col-md-4">
-                        <i class="bi bi-envelope fs-1"></i>
-                        <h5>Email</h5>
-                        <p>tuemail@ejemplo.com</p>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
                     </div>
-                    <div class="col-md-4">
-                        <i class="bi bi-phone fs-1"></i>
-                        <h5>Teléfono</h5>
-                        <p>+591 12345678</p>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                        <a href="/" class="btn btn-primary">Volver a inicio</a>
                     </div>
-                    <div class="col-md-4">
-                        <i class="bi bi-geo-alt fs-1"></i>
-                        <h5>Ubicación</h5>
-                        <p>Bolivia</p>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
-</section>
+</div>
+
 {% endblock %}
